@@ -1,0 +1,12 @@
+#does a simple zip code search of yahoo
+import time
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+
+driver = webdriver.Chrome("C:\\bin\\chromedriver\\chromedriver.exe")
+driver.get("https://www.yahoo.com")
+time.sleep(3)
+search_box=driver.find_element_by_xpath('//*[@id="uh-search-box"]')
+search_box.send_keys('10010' + '\n')
+WebDriverWait.sleep(5)
+driver.quit()
